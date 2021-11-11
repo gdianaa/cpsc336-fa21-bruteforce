@@ -1,5 +1,6 @@
 # cpsc336-fa21-bruteforce
 #inital project info and teammate information
+
 #Team roles:
 #Project manager: Diana Garcia
 #Lead developer: Jess Perks
