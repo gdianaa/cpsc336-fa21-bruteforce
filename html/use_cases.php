@@ -17,7 +17,7 @@
 	}
 
 	//add method
-          if(isset($_POST["insert"] {
+          if(isset($_POST["insert"])) {
 		$getid = $_REQUEST['itemid'];
 		$getname = $_REQUEST['itemname'];
 		$getquan = $_REQUEST['itemquantity'];
@@ -27,8 +27,8 @@
 
 		if(mysqli_query($conn, $sql)){
 		  echo "<h3>data stored in a database successfully.</h3>";
-		  echo nl2br("n$itemid\n $itemname\n "
-			. "$item_quantity");
+		  echo nl2br("\n$itemid\n $itemname\n "
+			. "$itemquantity");
 		} else{
 		  echo"ERROR: Sorry $sql. "
 			. mysqli_error($conn);
@@ -37,16 +37,17 @@
 	
 	//delete method
 	if (isset($_POST["delete"]{
-		$getid = $_REQUEST['itemid'];
-		$getname = $_REQUEST['itemname'];
-		$getquan = $_REQUEST['itemquantity'];
+		$getid = $_POST['itemid'];
+		$getname = $_POST['itemname'];
+		$getquan = $_POST['itemquantity'];
 		
 		$sql = "DELETE FROM employees WHERE itemid = '$getid'";
 		
 		if(mysqli_query($conn, $sql)){
 			echo "<h3> data deleted from database successfully</h3>";
 		} else{
-			echo "ERROR: Sorry $sql." . mysqli_error($conn);
+			echo "ERROR: Sorry $sql." 
+		 	    . mysqli_error($conn);
 		}
 	}
 
