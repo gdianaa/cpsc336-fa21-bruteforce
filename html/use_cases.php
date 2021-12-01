@@ -23,7 +23,7 @@
 		$getquan = $_REQUEST['itemquantity'];
 
 		$sql = "INSERT INTO employees (itemid,itemname,itemquantity)
-		VALUES ('$getid','$getname',$getquan')";
+		VALUES ('$getid','$getname','$getquan')";
 
 		if(mysqli_query($conn, $sql)){
 		  echo "<h3>data stored in a database successfully.</h3>";
@@ -36,7 +36,7 @@
 	}
 	
 	//delete method
-	if (isset($_POST["delete"]{
+	if (isset($_POST["delete"])){
 		$getid = $_POST['itemid'];
 		$getname = $_POST['itemname'];
 		$getquan = $_POST['itemquantity'];
