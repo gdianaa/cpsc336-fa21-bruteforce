@@ -47,7 +47,20 @@
 			echo "<h3> data deleted from database successfully</h3>";
 		} else{
 			echo "ERROR: Sorry $sql." 
-		 	    . mysqli_error($conn);
+		 	    . mysql_error($conn);
+		}
+	}
+	if (isset($_POST["search"])){
+		$sql =$conn->query( "SELECT * FROM employees");
+		//$retval =mysqli_query($conn, $sql);
+	//	if (! $retval){
+	//		die ('Could not get data: ' . mysqli_error($conn));
+	//	}
+		while ($row = $sql->fetch_array()){
+			echo "ITEM ID:{$row['itemid']} <br> ".
+				"ITEM NAME : {$row['itemname']} <br>".
+				"ITEM QUANTITY: {$row['itemquantity']}<br>".
+				"-------------------------------------- <br>";
 		}
 	}
 

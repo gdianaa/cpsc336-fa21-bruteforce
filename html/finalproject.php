@@ -6,7 +6,7 @@ include 'connect.php';
     <center>
    <form action="use_cases.php" method ="post">
   <!--form action="finalproject.php" method="post"-->
-   	<input type="text" name="itemid" placeholder="itemId"><br><br>
+   	<input type="text" name="itemid" min = "10" placeholder="itemId"><br><br>
 	<input type="text" name="itemname" placeholder="itemName"><br><br>
 	<input type="number" name="itemquantity" min="0" placeholder="itemQuantity"><br><br>
 	
