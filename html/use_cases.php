@@ -44,7 +44,7 @@
 		$sql = "DELETE FROM employees WHERE itemid = '$getid'";
 		
 		if(mysqli_query($conn, $sql)){
-			echo "<h3> data deleted from database successfully</h3>";
+			echo "<h3> item id: ". $getid . " data deleted from database successfully</h3>";
 		} else{
 			echo "ERROR: Sorry $sql." 
 		 	    . mysql_error($conn);
@@ -53,7 +53,7 @@
 	if (isset($_POST["search"])){
 		$sql =$conn->query( "SELECT * FROM employees");
 		echo"#######################<br>";
-		echo "Data In The Database <br>";
+		echo "<h3> Data In The Database </h3> <br>";
 		echo"#######################<br><br>";
 		while ($row = $sql->fetch_array()){
 			echo "ITEM ID: {$row['itemid']} <br> ".
