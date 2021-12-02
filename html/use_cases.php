@@ -52,13 +52,12 @@
 	}
 	if (isset($_POST["search"])){
 		$sql =$conn->query( "SELECT * FROM employees");
-		//$retval =mysqli_query($conn, $sql);
-	//	if (! $retval){
-	//		die ('Could not get data: ' . mysqli_error($conn));
-	//	}
+		echo"#######################<br>";
+		echo "Data In The Database <br>";
+		echo"#######################<br><br>";
 		while ($row = $sql->fetch_array()){
-			echo "ITEM ID:{$row['itemid']} <br> ".
-				"ITEM NAME : {$row['itemname']} <br>".
+			echo "ITEM ID: {$row['itemid']} <br> ".
+				"ITEM NAME: {$row['itemname']} <br>".
 				"ITEM QUANTITY: {$row['itemquantity']}<br>".
 				"-------------------------------------- <br>";
 		}
